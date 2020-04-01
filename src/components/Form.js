@@ -96,52 +96,52 @@ export default function Form() {
 
   return (
     <form onSubmit={formSubmit}>
-      <label htmlFor='name'>
+      <label htmlFor="name">
         Name
         <input
-          type='text'
-          name='name'
+          type="text"
+          name="name"
           value={formState.name}
           onChange={inputChange}
         />
-        {errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
+        {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
       </label>
-      <label htmlFor='email'>
+      <label htmlFor="email">
         Email
         <input
-          type='text'
-          name='email'
+          type="text"
+          name="email"
           value={formState.email}
           onChange={inputChange}
         />
         {errors.email.length > 0 ? (
-          <p className='error'>{errors.email}</p>
+          <p className="error">{errors.email}</p>
         ) : null}
       </label>
-      <label htmlFor='motivation'>
+      <label htmlFor="motivation">
         Why would you like to help?
         <textarea
-          name='motivation'
+          name="motivation"
           value={formState.motivation}
           onChange={inputChange}
         />
         {errors.motivation.length > 0 ? (
-          <p className='error'>{errors.motivation}</p>
+          <p className="error">{errors.motivation}</p>
         ) : null}
       </label>
-      <label htmlFor='positions'>
+      <label htmlFor="positions">
         What would you like to help with?
-        <select id='positions' name='positions' onChange={inputChange}>
-          <option value='Newsletter'>Newsletter</option>
-          <option value='Yard Work'>Yard Work</option>
-          <option value='Administrative Work'>Administrative Work</option>
-          <option value='Tabling'>Tabling</option>
+        <select id="positions" name="positions" onChange={inputChange}>
+          <option value="Newsletter">Newsletter</option>
+          <option value="Yard Work">Yard Work</option>
+          <option value="Administrative Work">Administrative Work</option>
+          <option value="Tabling">Tabling</option>
         </select>
       </label>
-      <label htmlFor='terms' className='terms'>
+      <label htmlFor="terms" className="terms">
         <input
-          type='checkbox'
-          name='terms'
+          type="checkbox"
+          name="terms"
           checked={formState.terms}
           onChange={inputChange}
         />
@@ -149,7 +149,9 @@ export default function Form() {
       </label>
       {/* displaying our post request data */}
       <pre>{JSON.stringify(post, null, 2)}</pre>
-      <button disabled={buttonDisabled}>Submit</button>
+      <button disabled={buttonDisabled} data-cy="submit">
+        Submit
+      </button>
     </form>
   );
 }
